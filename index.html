@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css">
   </head>
 
   <body class="bg-black text-white">
@@ -83,23 +84,22 @@
         </div>
       </div>
     </nav>
-
-    <section class="vh-101 d-flex align-items-center">
+    <section class="vh-101 d-flex align-items-center hero-section">
       <div class="container-fluid">
         <div class="row align-items-center">
           <!-- TEXT -->
-          <div class="col-md-6 px-5">
+          <div class="col-md-6 px-5 hero-text">
             <h1 class="display-3 fw-bold lh-1 fade-left">
               MUHAMAD<br />AGUNG<br />RIZKI
             </h1>
 
-            <p class="fs-4 fw-semibold mt-3 fade-left">
+            <p class="fs-4 fw-semibold mt-3 fade-left delay-1">
               FRONTEND WEB DEVELOPER
             </p>
 
             <a
               href="kontak.html"
-              class="btn btn-outline-light rounded-pill px-4 mt-3"
+              class="btn btn-outline-light rounded-pill px-4 mt-3 fade-left delay-2"
               data-id="KONTAK SAYA"
               data-en="MY CONTACT"
             >
@@ -109,7 +109,7 @@
             <!-- GARIS + ICON -->
             <hr class="border border-white opacity-100 my-4" />
 
-            <div class="d-flex gap-5 fs-2 fade-top">
+            <div class="d-flex gap-5 fs-2 fade-top delay-1 flex-wrap justify-content-center hero-icons">
               <i class="bi bi-filetype-html"></i>
               <i class="bi bi-filetype-css"></i>
               <i class="bi bi-filetype-js"></i>
@@ -121,14 +121,14 @@
           </div>
 
           <!-- IMAGE -->
-          <div class="col-md-5 text-end d-none d-md-block fade-right">
+          <div class="col-md-5 text-center text-md-end d-block d-md-block fade-right delay-1 hero-image">
             <img src="IMG/hero.png" class="img-fluid" alt="Profile" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="tentang" class="bg-white text-dark py-5">
+    <section id="tentang" class="bg-white text-dark py-5 fade-in">
       <div class="container">
         <!-- GARIS ATAS -->
         <hr class="border border-dark opacity-100 mb-5" />
@@ -137,7 +137,7 @@
         <div class="row mb-4">
           <div class="col">
             <h2
-              class="fw-bold display-6"
+              class="fw-bold display-6 animate-on-scroll"
               data-id="Siapa saya?"
               data-en="Who am i?"
             >
@@ -147,7 +147,7 @@
         </div>
 
         <!-- KONTEN -->
-        <div class="row align-items-center">
+        <div class="row align-items-center animate-on-scroll">
           <!-- GAMBAR -->
           <div class="col-md-5 text-center mb-4 mb-md-0">
             <div class="col-md-5 text-center mb-4 mb-md-0">
@@ -189,13 +189,13 @@
       </div>
     </section>
 
-    <section id="faq" class="bg-black text-white py-5">
+    <section id="faq" class="bg-black text-white py-5 fade-in">
       <div class="container text-center">
         <!-- JUDUL -->
-        <h2 class="fw-bold mb-5">ADA PERTANYAAN?</h2>
+        <h2 class="fw-bold mb-5 animate-on-scroll">ADA PERTANYAAN?</h2>
 
         <!-- FAQ -->
-        <div class="accordion" id="faqAccordion">
+        <div class="accordion animate-on-scroll" id="faqAccordion">
           <div
             class="accordion-item bg-black text-white border border-white rounded mb-3"
           >
@@ -360,6 +360,27 @@
       document.addEventListener("DOMContentLoaded", () => {
         const lang = localStorage.getItem("lang") || "id";
         setLang(lang);
+      });
+
+      // Animasi saat scroll
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+            } else {
+              entry.target.classList.remove('animate');
+            }
+          });
+        }, {
+          threshold: 0,
+          rootMargin: "0px"
+        });
+
+        // Amati semua elemen dengan class animate-on-scroll
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
       });
     </script>
   </body>

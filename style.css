@@ -14,6 +14,35 @@ background-image:url('IMG/batik.svg');
   width:100%;
 }
 
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  body {
+    background-image: none; /* Hilangkan batik di mobile */
+  }
+  
+  /* Hero section background image di mobile - gedein */
+  .hero-section {
+    background-image: url('IMG/hero.png') !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
+  }
+  
+  /* Text styling di mobile */
+  .hero-text {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Shadow for readability */
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem; /* Lebih besar */
+  }
+  
+  .hero-text p {
+    font-size: 1.5rem;
+  }
+
 /* dari kiri */
 .fade-left {
   animation: fadeLeft .8s ease forwards;
@@ -48,4 +77,122 @@ background-image:url('IMG/batik.svg');
 @keyframes fadeBottom {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* fade in */
+.fade-in {
+  animation: fadeIn .8s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Delay untuk animasi */
+.fade-left.delay-1 { animation-delay: 0.2s; }
+.fade-left.delay-2 { animation-delay: 0.4s; }
+.fade-top.delay-1 { animation-delay: 0.6s; }
+.fade-right.delay-1 { animation-delay: 0.8s; }
+
+/* Animasi saat scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsivitas untuk Mobile */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .display-3 {
+    font-size: 2.5rem; /* Lebih kecil di mobile */
+  }
+  
+  .fs-4 {
+    font-size: 1.25rem; /* Sesuaikan ukuran */
+  }
+  
+  /* Ikon di hero */
+  .hero-icons {
+    font-size: 0.875rem !important; /* fs-1 */
+    gap: 0.5rem !important; /* gap-2 */
+  }
+  
+  /* Navbar overlap fix */
+  body {
+    padding-top: 50px; /* Kurangi lagi */
+  }
+  
+  /* Navbar kecil di mobile */
+  .navbar {
+    min-height: 40px;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar-nav {
+    text-align: center;
+  }
+  
+  /* Cards di project */
+  .card-header {
+    font-size: 1rem;
+  }
+  
+  /* Timeline */
+  .col-2, .col-9 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .col-1 {
+    display: none; /* Sembunyikan garis vertikal di mobile */
+  }
+  
+  /* Form di kontak */
+  .form-label {
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  .row > div {
+    margin-bottom: 1rem;
+  }
+  
+  /* Hero section background image di mobile */
+  .hero-section {
+    background-image: url('IMG/hero.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-attachment: scroll;
+  }
+  
+  /* Hide image div di mobile */
+  @media (max-width: 768px) {
+    .hero-image {
+      display: none !important;
+    }
+  }
+}
+
+/* Responsivitas untuk Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .display-3 {
+    font-size: 3rem;
+  }
+}
 }
