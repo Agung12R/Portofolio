@@ -109,54 +109,6 @@ background-image:url('IMG/batik.svg');
 /* Responsivitas untuk Mobile */
 @media (max-width: 768px) {
   /* Hero Section */
-  .hero-section {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    position: relative;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-    animation: borderTopBottom 1s ease forwards;
-  }
-  
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: white;
-    transform: scaleY(0);
-    transform-origin: top;
-    animation: slideInVertical 1s ease forwards;
-  }
-  
-  .hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: white;
-    transform: scaleY(0);
-    transform-origin: top;
-    animation: slideInVertical 1s ease forwards;
-  }
-  
-  @keyframes slideInVertical {
-    to {
-      transform: scaleY(1);
-    }
-  }
-  
-  @keyframes borderTopBottom {
-    to {
-      border-top-color: white;
-      border-bottom-color: white;
-    }
-  }
-  
   .display-3 {
     font-size: 2.5rem; /* Lebih kecil di mobile */
   }
@@ -207,7 +159,47 @@ background-image:url('IMG/batik.svg');
   }
   
   .col-1 {
-    display: none; /* Sembunyikan garis vertikal di mobile */
+    display: block;
+    text-align: center;
+  }
+  .col-1 .h-100 {
+    height: 50px !important;
+  }
+  .col-1 .border-start {
+    border-color: black !important;
+    border-start: none !important;
+    border-top: 2px solid black !important;
+    height: 2px !important;
+    width: 100% !important;
+    position: static !important;
+    top: auto !important;
+  }
+  .col-1 .rounded-circle {
+    top: -6px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Mobile timeline horizontal */
+  .row.position-relative {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .col-2 {
+    width: auto !important;
+    text-align: left !important;
+    flex: 0 0 auto;
+  }
+  .col-1 {
+    width: 50px !important;
+    flex: 0 0 50px;
+    position: relative;
+  }
+  .col-9 {
+    flex: 1;
+    text-align: left !important;
+    width: auto !important;
   }
   
   /* Form di kontak */
@@ -241,42 +233,6 @@ background-image:url('IMG/batik.svg');
 @media (min-width: 769px) and (max-width: 1024px) {
   .display-3 {
     font-size: 3rem;
-  }
-}
-
-/* Responsivitas untuk Desktop */
-@media (min-width: 1025px) {
-  body {
-    padding-top: 70px;
-  }
-  
-  .hero-section {
-    height: calc(100vh - 70px);
-    min-height: calc(100vh - 70px);
-    border-bottom: 2px solid white;
-  }
-  
-  .hero-image {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
-  .hero-image img {
-    max-height: 60vh;
-    object-fit: contain;
-    width: auto;
-    position: relative;
-  }
-  
-  .hero-image img::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: white;
   }
 }
 }
