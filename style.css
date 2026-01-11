@@ -22,7 +22,7 @@ background-image:url('IMG/batik.svg');
   
   /* Hero section background image di mobile - gedein */
   .hero-section {
-    background-image: url('IMG/hero.png') !important;
+    background-image: url('IMG/hero.svg') !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -263,7 +263,7 @@ background-image:url('IMG/batik.svg');
   
   /* Hero section background image di mobile */
   .hero-section {
-    background-image: url('IMG/hero.png');
+    background-image: url('IMG/hero.svg');
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: right center;
