@@ -49,63 +49,37 @@
       </p>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-md-6 animate-on-scroll">
+   <!-- GANTI action dengan link dari Formspree -->
+<form action="https://formspree.io/f/maqqylen" method="POST">
 
-        <!-- FORM -->
-        <form action="mailto:agungikyl2@gmail.com" method="post" enctype="text/plain">
-
-          <!-- NAMA -->
-          <div class="mb-4">
-            <label class="form-label fw-semibold" data-id="Nama kamu siapa" data-en="What's your name">
-              Nama kamu siapa
-            </label>
-            <input type="text"
-                   name="Nama"
-                   class="form-control bg-black text-white border-white"
-                   placeholder="Masukkan nama kamu"
-                   required>
-          </div>
-
-          <!-- EMAIL -->
-          <div class="mb-4">
-            <label class="form-label fw-semibold" data-id="Nama Email kamu" data-en="Your Email Name">
-              Nama Email kamu
-            </label>
-            <input type="email"
-                   name="Email"
-                   class="form-control bg-black text-white border-white"
-                   placeholder="emailkamu@gmail.com"
-                   required>
-          </div>
-
-          <!-- PESAN -->
-          <div class="mb-4">
-            <label class="form-label fw-semibold" data-id="Mau ngobrol soal apa" data-en="What do you want to talk about">
-              Mau ngobrol soal apa
-            </label>
-            <textarea name="Pesan"
-                      rows="4"
-                      class="form-control bg-black text-white border-white"
-                      placeholder="Tulis pesan kamu di sini"
-                      required></textarea>
-          </div>
-
-          <!-- TOMBOL -->
-          <div class="text-center">
-            <button type="submit"
-                    class="btn btn-outline-light px-5 rounded-pill" data-id="Kirim Pesan" data-en="Send Message">
-              Kirim Pesan
-            </button>
-          </div>
-
-        </form>
-
-      </div>
-    </div>
-
+  <!-- NAMA -->
+  <div class="mb-4">
+    <label class="form-label fw-semibold">Nama kamu siapa</label>
+    <input type="text" name="Nama" class="form-control bg-black text-white border-white" placeholder="Masukkan nama kamu" required>
   </div>
-</section>
+
+  <!-- EMAIL -->
+  <div class="mb-4">
+    <label class="form-label fw-semibold">Nama Email kamu</label>
+    <!-- Tambahkan name="email" agar Formspree tahu ke mana harus membalas -->
+    <input type="email" name="_replyto" class="form-control bg-black text-white border-white" placeholder="emailkamu@gmail.com" required>
+  </div>
+
+  <!-- PESAN -->
+  <div class="mb-4">
+    <label class="form-label fw-semibold">Mau ngobrol soal apa</label>
+    <textarea name="Pesan" rows="4" class="form-control bg-black text-white border-white" placeholder="Tulis pesan kamu di sini" required></textarea>
+  </div>
+
+  <!-- TOMBOL -->
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-light px-5 rounded-pill">
+      Kirim Pesan
+    </button>
+  </div>
+
+</form>
+
 
 
     <footer class="bg-black text-white pt-4">
